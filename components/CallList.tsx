@@ -4,11 +4,10 @@ import { CallRecording, Call } from '@stream-io/video-react-sdk';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import MeetingCard from './MeetingCard';
-import { useToast } from '@/hooks/use-toast';
 
 const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
     const router = useRouter();
-    const { endedcalls, upcomingCalls, callrecordings, isLoading } = useGetCalls();
+    const { endedcalls, upcomingCalls, callrecordings } = useGetCalls(); // Removed `isLoading` as it wasn't used
     const [recordings, setRecordings] = useState<CallRecording[]>([]);
 
     const getCalls = () => {
@@ -57,7 +56,6 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
         }
     }, [type, callrecordings]);
 
-    const { toast } = useToast();
     const calls = getCalls();
     const nocalls = getNoCalls();
 

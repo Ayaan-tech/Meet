@@ -1,9 +1,7 @@
-'use client'
-import { DeviceSettings, useCall, VideoPreview } from '@stream-io/video-react-sdk'
-import React, { useEffect, useState } from 'react'
+'use client';
+import { DeviceSettings, useCall, VideoPreview } from '@stream-io/video-react-sdk';
+import React, { useEffect, useState } from 'react';
 import { Button } from './ui/button';
-
-
 
 const MeetingSetup = ({ setisSetupComplete }: { setisSetupComplete: (value: boolean) => void }) => {
     const [isMicCamToggledOn, setIsMicCamToggledOn] = useState(false);
@@ -22,7 +20,7 @@ const MeetingSetup = ({ setisSetupComplete }: { setisSetupComplete: (value: bool
         }
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (isMicCamToggledOn) {
             call?.camera.disable();
             call?.microphone.disable();
