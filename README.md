@@ -1,4 +1,4 @@
-## 🎥 Meet - A Video Conferencing Web App
+# 🎥 Meet - A Video Conferencing Web App
 Welcome to Meet, a feature-rich video conferencing platform designed to make online collaboration seamless and engaging. 🚀
 
 This project is built with Next.js, bootstrapped using create-next-app, and leverages the power of modern web technologies to deliver a superior user experience.
